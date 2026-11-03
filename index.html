@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#171027">
+  <meta name="description" content="FitQueen — fitness, nutrição e bem-estar.">
+  <title>FitQueen — Crystal</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="app-shell">
+    <aside class="sidebar glass">
+      <a class="brand" href="#" aria-label="FitQueen início">
+        <span class="brand-mark">F</span><span>Fit<span class="brand-light">Queen</span><small>WELLNESS STUDIO</small></span>
+      </a>
+      <div class="side-label">MENU PRINCIPAL</div>
+      <nav class="nav-list" aria-label="Navegação principal">
+        <button class="nav-item active" data-view="dashboard"><span>◈</span> Visão geral</button>
+        <button class="nav-item" data-view="nutrition"><span>♧</span> Nutrição</button>
+        <button class="nav-item" data-view="workouts"><span>✦</span> Treinos</button>
+        <button class="nav-item" data-view="calendar"><span>▦</span> Calendário</button>
+        <button class="nav-item" data-view="progress"><span>⌁</span> Progresso</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="side-label">PESSOAL</div>
+        <button class="nav-item" data-view="profile"><span>⚙</span> Perfil e definições</button>
+        <div class="sidebar-note"><span class="sparkle">✧</span><b>Pequenos passos.</b><br>Consistência acima da perfeição.</div>
+        <div class="user-mini"><div class="avatar" id="avatarInitial">F</div><div><b id="sidebarName">O teu espaço</b><small>Conta local</small></div><span class="online-dot"></span></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div><div class="eyebrow" id="todayLabel">O TEU ESPAÇO DE BEM-ESTAR</div><h1 id="pageTitle">Visão geral</h1></div>
+        <div class="top-actions"><span class="date-chip" id="headerDate"></span><button class="icon-btn" id="quickAddBtn" title="Adicionar registo" aria-label="Adicionar registo">＋</button></div>
+      </header>
+
+      <section class="view active" id="view-dashboard">
+        <div class="welcome-banner glass">
+          <div class="welcome-copy"><span class="pill"><i></i> O TEU DIA, AO TEU RITMO</span><h2>Olá, <span id="welcomeName">bem-vinda</span> ✨</h2><p>Cuida do teu corpo, respeita o teu ritmo e celebra cada progresso.</p><button class="primary-btn" data-go="workouts">Explorar treinos <span>→</span></button></div>
+          <div class="welcome-art"><div class="orb orb-a"></div><div class="orb orb-b"></div><div class="glass-gem">✧</div><div class="art-caption">MOVE · NOURISH · REST</div></div>
+        </div>
+
+        <div class="section-heading"><div><span class="eyebrow">RESUMO DE HOJE</span><h2>O teu painel</h2></div><span class="subtle" id="dashboardDate"></span></div>
+        <div class="stats-grid">
+          <article class="metric-card glass"><div class="metric-top"><span>Água</span><span class="metric-icon aqua">◌</span></div><div class="metric-value"><strong id="waterValue">0</strong><small> / 2.0 L</small></div><div class="progress-track"><div class="progress-fill aqua-fill" id="waterProgress"></div></div><button class="text-action" data-action="water">＋ Registar água</button></article>
+          <article class="metric-card glass"><div class="metric-top"><span>Refeições</span><span class="metric-icon pink">♧</span></div><div class="metric-value"><strong id="mealCount">0</strong><small> registos</small></div><p class="metric-hint" id="mealHint">Regista uma refeição quando quiseres.</p><button class="text-action" data-go="nutrition">Ver nutrição →</button></article>
+          <article class="metric-card glass"><div class="metric-top"><span>Treino</span><span class="metric-icon violet">✦</span></div><div class="metric-value"><strong id="workoutStatus">Livre</strong></div><p class="metric-hint" id="workoutHint">Movimento também pode ser descanso.</p><button class="text-action" data-go="workouts">Ver plano →</button></article>
+          <article class="metric-card glass"><div class="metric-top"><span>Consistência</span><span class="metric-icon gold">✧</span></div><div class="metric-value"><strong id="streakValue">0</strong><small> dias ativos</small></div><p class="metric-hint">Dias com pelo menos um registo.</p><button class="text-action" data-go="progress">Ver progresso →</button></article>
+        </div>
+
+        <div class="content-grid">
+          <article class="panel glass"><div class="panel-heading"><div><span class="eyebrow">ORGANIZA O TEU DIA</span><h3>Atividade de hoje</h3></div><span class="soft-tag">HOJE</span></div><div id="todayActivity" class="activity-list"><div class="empty-state">Ainda não há atividades registadas.</div></div></article>
+          <article class="panel glass coach-card"><div class="coach-icon">✧</div><span class="eyebrow">LEMBRETE FITQUEEN</span><h3>O teu bem-estar não é uma corrida.</h3><p>Alimenta-te de forma variada, movimenta-te de um modo que gostes e dá espaço à recuperação.</p><button class="text-action" data-go="profile">Personalizar experiência →</button></article>
+        </div>
+      </section>
+
+      <section class="view" id="view-nutrition">
+        <div class="section-heading"><div><span class="eyebrow">ALIMENTAÇÃO CONSCIENTE</span><h2>Nutrição</h2><p class="subtle">Regista refeições e observa os teus hábitos sem julgamentos.</p></div><button class="primary-btn" id="addMealBtn">＋ Adicionar refeição</button></div>
+        <div class="nutrition-summary">
+          <article class="panel glass"><span class="eyebrow">REFEIÇÕES REGISTADAS</span><div class="big-number" id="nutritionMeals">0</div><p class="subtle">Hoje</p></article>
+          <article class="panel glass"><span class="eyebrow">ÁGUA REGISTADA</span><div class="big-number" id="nutritionWater">0 ml</div><p class="subtle">Hidratação diária</p></article>
+          <article class="panel glass"><span class="eyebrow">NOTA</span><div class="nutrition-note">Uma alimentação equilibrada inclui variedade, prazer e flexibilidade.</div></article>
+        </div>
+        <article class="panel glass"><div class="panel-heading"><h3>Diário alimentar</h3><span class="subtle" id="mealDateLabel"></span></div><div id="mealList" class="meal-list"></div></article>
+        <article class="panel glass water-panel"><div><span class="eyebrow">HIDRATAÇÃO</span><h3>Água ao longo do dia</h3><p class="subtle">O objetivo é uma referência ajustável, não uma obrigação rígida.</p></div><div class="water-controls"><button class="secondary-btn" data-water="150">＋ 150 ml</button><button class="secondary-btn" data-water="250">＋ 250 ml</button><button class="secondary-btn" data-water="500">＋ 500 ml</button></div><div class="water-line"><div class="progress-track"><div class="progress-fill aqua-fill" id="nutritionWaterProgress"></div></div><b id="waterPercent">0%</b></div></article>
+      </section>
+
+      <section class="view" id="view-workouts">
+        <div class="section-heading"><div><span class="eyebrow">MOVIMENTO COM INTENÇÃO</span><h2>Os teus treinos</h2><p class="subtle">Escolhe uma sessão adequada à tua experiência e energia.</p></div></div>
+        <div class="workout-tabs" role="tablist"><button class="workout-tab active" data-plan="A">Plano A <small>Força geral</small></button><button class="workout-tab" data-plan="B">Plano B <small>Mobilidade e core</small></button><button class="workout-tab" data-plan="C">Plano C <small>Resistência</small></button></div>
+        <div class="workout-layout"><article class="panel glass"><div class="panel-heading"><div><span class="eyebrow" id="planEyebrow">PLANO A</span><h3 id="planTitle">Força geral</h3></div><span class="soft-tag">EDITÁVEL</span></div><p class="subtle" id="planDescription"></p><div id="exerciseList" class="exercise-list"></div><div class="workout-footer"><button class="primary-btn" id="completeWorkoutBtn">Marcar sessão concluída ✓</button><span class="subtle" id="workoutDuration">Sessão sugerida: 25–35 min</span></div></article><aside class="panel glass safety-panel"><div class="safety-symbol">♡</div><h3>Treina com segurança</h3><p>Começa de forma gradual, dá prioridade à técnica e adapta os exercícios ao teu nível.</p><ul><li>Faz aquecimento adequado.</li><li>Respeita pausas e recuperação.</li><li>Interrompe se sentires dor ou mal-estar.</li><li>Procura orientação profissional se tiveres dúvidas ou limitações.</li></ul></aside></div>
+      </section>
+
+      <section class="view" id="view-calendar">
+        <div class="section-heading"><div><span class="eyebrow">A TUA ROTINA</span><h2>Calendário</h2><p class="subtle">Consulta os registos e atividades por dia.</p></div><div class="month-controls"><button class="icon-btn" id="prevMonth">‹</button><b id="monthTitle"></b><button class="icon-btn" id="nextMonth">›</button></div></div>
+        <article class="panel glass calendar-panel"><div class="calendar-grid calendar-weekdays"><span>SEG</span><span>TER</span><span>QUA</span><span>QUI</span><span>SEX</span><span>SÁB</span><span>DOM</span></div><div class="calendar-grid" id="calendarGrid"></div><div class="calendar-legend"><span><i class="dot dot-meal"></i> Refeição</span><span><i class="dot dot-workout"></i> Treino</span><span><i class="dot dot-water"></i> Água</span></div></article>
+        <article class="panel glass"><div class="panel-heading"><h3 id="selectedDateTitle">Registos do dia</h3></div><div id="selectedDayContent" class="activity-list"></div></article>
+      </section>
+
+      <section class="view" id="view-progress">
+        <div class="section-heading"><div><span class="eyebrow">EVOLUÇÃO E CONSISTÊNCIA</span><h2>O teu progresso</h2><p class="subtle">Acompanha hábitos e atividade, sem comparações.</p></div></div>
+        <div class="stats-grid progress-stats"><article class="metric-card glass"><span class="eyebrow">TREINOS CONCLUÍDOS</span><div class="big-number" id="totalWorkouts">0</div></article><article class="metric-card glass"><span class="eyebrow">REFEIÇÕES REGISTADAS</span><div class="big-number" id="totalMeals">0</div></article><article class="metric-card glass"><span class="eyebrow">DIAS COM REGISTOS</span><div class="big-number" id="activeDays">0</div></article></div>
+        <article class="panel glass"><div class="panel-heading"><h3>Últimos 7 dias</h3><span class="subtle">Atividade registada</span></div><div id="weeklyBars" class="weekly-bars"></div></article>
+        <article class="panel glass"><div class="panel-heading"><h3>Histórico recente</h3><button class="text-action" id="exportBtn">Exportar dados ↓</button></div><div id="recentHistory" class="activity-list"></div></article>
+      </section>
+
+      <section class="view" id="view-profile">
+        <div class="section-heading"><div><span class="eyebrow">A TUA EXPERIÊNCIA</span><h2>Perfil e definições</h2><p class="subtle">Personaliza a aplicação no teu dispositivo.</p></div></div>
+        <div class="profile-layout"><article class="panel glass"><h3>Perfil</h3><form id="profileForm" class="form-grid"><label>Nome<input id="profileName" maxlength="40" placeholder="Como queres ser chamada?"></label><label>Objetivo de bem-estar<select id="profileGoal"><option value="strength">Melhorar força</option><option value="fitness">Melhorar condição física</option><option value="energy">Mais energia e hábitos</option><option value="mobility">Mobilidade e flexibilidade</option><option value="general">Bem-estar geral</option></select></label><label>Unidades<select id="profileUnits"><option value="metric">Métrico (kg / cm)</option><option value="imperial">Imperial (lb / in)</option></select></label><label class="check-label"><input type="checkbox" id="profileReminders"> Mostrar lembretes dentro da aplicação</label><button class="primary-btn" type="submit">Guardar perfil</button></form></article><article class="panel glass"><h3>Dados e privacidade</h3><p class="subtle">Nesta versão, os registos ficam guardados localmente neste navegador/dispositivo. Não existe conta nem sincronização online.</p><button class="secondary-btn full" id="backupBtn">Exportar cópia de segurança</button><label class="secondary-btn full import-label">Importar cópia de segurança<input type="file" id="importFile" accept="application/json"></label><button class="danger-btn full" id="resetBtn">Apagar todos os dados locais</button><p class="tiny-note">A exportação é recomendada antes de limpar os dados do navegador ou trocar de dispositivo.</p></article></div>
+      </section>
+
+      <footer class="footer"><span>FITQUEEN CRYSTAL</span><span>Move with care · Nourish with balance · Rest with purpose</span></footer>
+    </main>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Navegação móvel"><button class="active" data-view="dashboard">◈<small>Início</small></button><button data-view="nutrition">♧<small>Nutrição</small></button><button data-view="workouts">✦<small>Treinos</small></button><button data-view="calendar">▦<small>Agenda</small></button><button data-view="profile">⚙<small>Perfil</small></button></nav>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden><section class="modal glass" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Fechar">×</button><span class="eyebrow">FITQUEEN</span><h2 id="modalTitle">Adicionar registo</h2><div id="modalContent"></div></section></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js" defer></script>
+</body>
+</html>

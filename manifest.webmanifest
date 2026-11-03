@@ -1,0 +1,12 @@
+{
+  "name": "FitQueen — Crystal Wellness",
+  "short_name": "FitQueen",
+  "description": "Fitness, nutrição e bem-estar.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#100b1d",
+  "theme_color": "#171027",
+  "icons": []
+}
